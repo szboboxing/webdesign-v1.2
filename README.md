@@ -24,14 +24,17 @@ webdesign-v1.2/
 ├─ SKILL.md                      规范总说明（何时用、令牌、禁忌、复用口诀）
 ├─ 安装说明.md                   安装路径、触发方式、套用步骤
 ├─ 安装提示词.txt                “生成 HTML 前先询问是否应用”
+├─ 应用速查卡.md                 一页纸速查（令牌 / 必做三件事 / 禁忌）
 ├─ references/
 │  └─ design-system.md           完整 CSS 令牌 + 主题切换（亮/暗/跟随系统）代码
 └─ assets/
    ├─ webdesign-v1.2.html        网页版活范本（浏览器直接打开）
    ├─ webdesign-v1.2-prompt.md   可复用提示词
    └─ effect-showcase.svg        配色色块示意图
-context/                         设计落地上下文（含 OCR 任务应用记录、应用速查卡）
 ```
+
+> 说明：本仓库只含 webdesign v1.2 设计系统 Skill 本身。它曾被用于「OCR 网页识别」项目的页面美化，
+> 但 OCR 是另一个独立项目，其代码与设计落地记录单独成库，不在此仓库内。
 
 ## 安装为 WorkBuddy Skill
 
