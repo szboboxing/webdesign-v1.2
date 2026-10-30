@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <!-- 页面底色：三文鱼粉 -->
+  <rect width="800" height="1000" fill="#FFF1E5"/>
+
+  <!-- 顶部标题 -->
+  <rect x="40" y="48" width="56" height="34" rx="8" fill="#990F3D"/>
+  <text x="68" y="71" fill="#FFFFFF" font-size="18" text-anchor="middle" font-weight="700">MD↓</text>
+  <text x="108" y="73" fill="#33302E" font-size="26" font-weight="700">MarkItDown Web</text>
+  <text x="40" y="104" fill="#8C7F74" font-size="14">参考 microsoft/markitdown 实现的浏览器端单页版本 —— 所有转换均在本地完成，文件不会上传到任何服务器。</text>
+
+  <!-- 短分割线：48x3 居中 酒红 -->
+  <rect x="376" y="128" width="48" height="3" rx="2" fill="#990F3D"/>
+
+  <!-- 卡片1：上传与输入（浅蜜桃 #FFE7D6） -->
+  <rect x="40" y="150" width="720" height="300" rx="12" fill="#FFE7D6" stroke="#E9C3AC"/>
+  <rect x="44" y="166" width="4" height="18" fill="#990F3D"/>
+  <text x="60" y="182" fill="#33302E" font-size="17" font-weight="700">上传与输入</text>
+  <!-- dropzone -->
+  <rect x="56" y="210" width="688" height="118" rx="12" fill="#FFFDFB" stroke="#E9C3AC" stroke-dasharray="6 5"/>
+  <text x="400" y="258" fill="#33302E" font-size="17" font-weight="600" text-anchor="middle">拖拽文件到此处，或点击选择文件</text>
+  <text x="400" y="288" fill="#8C7F74" font-size="13" text-anchor="middle">支持多选 · PDF / Word / Excel / PPT / HTML / CSV / JSON / XML / ZIP / 图片(EXIF) / 纯文本等</text>
+  <!-- urlbar -->
+  <rect x="56" y="346" width="540" height="38" rx="8" fill="#FFFDFB" stroke="#F0DCCC"/>
+  <text x="72" y="370" fill="#8C7F74" font-size="13">或粘贴文件 URL（受目标站 CORS 限制）</text>
+  <rect x="612" y="346" width="132" height="38" rx="8" fill="#990F3D"/>
+  <text x="678" y="370" fill="#FFFFFF" font-size="14" text-anchor="middle">转换 URL</text>
+
+  <!-- 卡片2：支持的格式（与上传框统一 浅蜜桃） -->
+  <rect x="40" y="478" width="720" height="430" rx="12" fill="#FFE7D6" stroke="#E9C3AC"/>
+  <rect x="44" y="494" width="4" height="18" fill="#990F3D"/>
+  <text x="60" y="510" fill="#33302E" font-size="17" font-weight="700">支持的格式</text>
+  <text x="150" y="510" fill="#8C7F74" font-size="13">对照 markitdown 官方支持清单</text>
+  <text x="56" y="548" fill="#33302E" font-size="14">PDF（pdf.js 逐页文本） · Word .docx（mammoth） · Excel/CSV（SheetJS，转 Markdown 表格）</text>
+  <text x="56" y="578" fill="#33302E" font-size="14">PPT .pptx（解析幻灯片 XML，含标题、表格、备注） · 图片（提取 EXIF 元数据）</text>
+  <text x="56" y="608" fill="#33302E" font-size="14">HTML（turndown） · JSON / XML / TXT / MD · ZIP（递归转换内部文件）</text>
+  <text x="56" y="648" fill="#8C7F74" font-size="14">暂不支持：音频转录与 OCR（依赖云端模型）、旧版 .doc、Outlook .msg、EPub、YouTube。</text>
+
+  <!-- 配色令牌示意 -->
+  <g font-size="12">
+    <rect x="56" y="700" width="40" height="40" rx="6" fill="#FFF1E5" stroke="#F0DCCC"/>
+    <text x="104" y="725" fill="#33302E">#FFF1E5 页面底色</text>
+    <rect x="56" y="748" width="40" height="40" rx="6" fill="#FFE7D6" stroke="#E9C3AC"/>
+    <text x="104" y="773" fill="#33302E">#FFE7D6 卡片底色（浅蜜桃）</text>
+    <rect x="56" y="796" width="40" height="40" rx="6" fill="#FFFDFB" stroke="#F0DCCC"/>
+    <text x="104" y="821" fill="#33302E">#FFFDFB 输入框/代码区</text>
+    <rect x="56" y="844" width="40" height="40" rx="6" fill="#33302E"/>
+    <text x="104" y="869" fill="#33302E">#33302E 正文文字</text>
+    <rect x="56" y="892" width="40" height="40" rx="6" fill="#990F3D"/>
+    <text x="104" y="917" fill="#33302E">#990F3D 唯一强调色（酒红）</text>
+  </g>
+  <text x="400" y="975" fill="#8C7F74" font-size="12" text-anchor="middle">webdesign v1.2 · 暖色系单页设计系统 · 效果示意图</text>
+</svg>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>webdesign v1.2 · 暖色系单页设计系统（配色规范）</title>
+<style>
+  /* ===== webdesign v1.2 设计系统 ===== */
+  :root {
+    --bg: #FFF1E5; --panel: #FFFAF6; --panel-deep: #FFFDFB;
+    --border: #F0DCCC; --text: #33302E; --muted: #8C7F74;
+    --accent: #990F3D; --accent-deep: #6E0B2C; --accent-soft: #FBE2E9;
+    --on-accent: #ffffff; --shadow: rgba(153, 15, 61, .06);
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1A18; --panel: #2A2522; --panel-deep: #322C28; --border: #463E38;
+    --text: #F2E9E2; --muted: #B8A99E; --accent: #C7365F; --accent-deep: #8C1E3D;
+    --accent-soft: #3A2530; --on-accent: #ffffff; --shadow: rgba(0, 0, 0, .35);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1A18; --panel: #2A2522; --panel-deep: #322C28; --border: #463E38;
+      --text: #F2E9E2; --muted: #B8A99E; --accent: #C7365F; --accent-deep: #8C1E3D;
+      --accent-soft: #3A2530; --on-accent: #ffffff; --shadow: rgba(0, 0, 0, .35);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.85;
+    transition: background .2s ease, color .2s ease; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 34px 22px 70px; }
+  header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 6px; }
+  .head-main { flex: 1; min-width: 0; }
+  header h1 { font-size: 28px; line-height: 1.45; display: flex; align-items: center; gap: 10px; }
+  header h1 .logo { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 2px 10px; font-size: 18px; }
+  header p { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+  /* 主题切换：跟随系统 / 明亮 / 昏暗 */
+  .theme-switch { display: inline-flex; gap: 2px; flex-shrink: 0; margin-top: 4px;
+    background: var(--panel-deep); border: 1px solid var(--border); border-radius: 999px; padding: 3px; }
+  .theme-switch button { border: none; background: transparent; color: var(--muted);
+    font-size: 13px; padding: 5px 12px; border-radius: 999px; cursor: pointer; }
+  .theme-switch button.active { background: var(--accent); color: var(--on-accent); }
+  .theme-switch button:hover:not(.active) { color: var(--text); }
+  hr.divider { border: none; width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin: 12px auto 26px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 2px 10px var(--shadow);
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .card-title { font-size: 18px; font-weight: 700; color: var(--text);
+    border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 16px; line-height: 1.5; }
+  .card-title .sub { font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+  p { margin: 10px 0; }
+  code { background: var(--accent-soft); padding: 1px 6px; border-radius: 4px; font-size: 13px; font-family: Consolas, monospace; }
+  strong { color: var(--accent); font-weight: 700; }
+  blockquote { border-left: 4px solid var(--accent); padding: 4px 14px; margin: 12px 0;
+    color: var(--muted); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+
+  /* 色块展示 */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .sw { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--panel-deep); }
+  .sw .chip { height: 70px; }
+  .sw .meta { padding: 8px 10px; }
+  .sw .name { font-size: 13px; font-weight: 700; }
+  .sw .val { font-size: 12px; color: var(--muted); font-family: Consolas, monospace; }
+
+  /* 组件示例 */
+  .demo { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .d-card { background: var(--panel-deep); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: 0 2px 10px var(--shadow); flex: 1; min-width: 220px; }
+  .d-title { font-size: 17px; font-weight: 700; border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 8px; }
+  .d-div { border: none; width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin: 14px auto; }
+  .btn-p { background: var(--accent); color: var(--on-accent); border: none; border-radius: 8px; padding: 9px 16px; font-size: 14px; }
+  .btn-s { background: var(--panel-deep); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 9px 16px; font-size: 14px; }
+  .badge { font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+  .badge-done { background: var(--accent); color: var(--on-accent); }
+  .badge-err { background: var(--accent-deep); color: var(--on-accent); }
+  .forbid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .forbid .bad { border: 1px dashed var(--border); border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+  .forbid .ok { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 13px; background: var(--panel-deep); }
+  .tag { font-weight: 700; }
+  .tag.x { color: var(--accent-deep); } .tag.v { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="head-main">
+      <h1><span class="logo">WD</span>webdesign v1.2</h1>
+      <p>暖色系单页 Web 设计系统 · 配色规范 · 全篇唯一强调色 <strong>#990F3D</strong></p>
+    </div>
+    <div class="theme-switch" id="themeSwitch" role="group" aria-label="主题切换">
+      <button type="button" data-theme-val="system" class="active">跟随系统</button>
+      <button type="button" data-theme-val="light">明亮</button>
+      <button type="button" data-theme-val="dark">昏暗</button>
+    </div>
+  </header>
+  <hr class="divider">
+
+  <div class="card">
+    <div class="card-title">一、设计令牌（Color Tokens）</div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#FFF1E5"></div><div class="meta"><div class="name">页面底色</div><div class="val">#FFF1E5 三文鱼粉</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFAF6"></div><div class="meta"><div class="name">卡片底色</div><div class="val">#FFFAF6 暖白</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFE7D6"></div><div class="meta"><div class="name">卡片底色</div><div class="val">#FFE7D6 浅蜜桃</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFDFB"></div><div class="meta"><div class="name">输入框/代码</div><div class="val">#FFFDFB 暖白</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FBE3E9"></div><div class="meta"><div class="name">强调弱化底</div><div class="val">#FBE3E9 酒红淡</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F0DCCC"></div><div class="meta"><div class="name">描边</div><div class="val">#F0DCCC 暖棕</div></div></div>
+      <div class="sw"><div class="chip" style="background:#33302E"></div><div class="meta"><div class="name">正文文字</div><div class="val">#33302E 近黑</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8C7F74"></div><div class="meta"><div class="name">次要文字</div><div class="val">#8C7F74 弱化</div></div></div>
+      <div class="sw"><div class="chip" style="background:#990F3D"></div><div class="meta"><div class="name">唯一强调色</div><div class="val">#990F3D 酒红</div></div></div>
+    </div>
+    <p style="margin-top:16px"><strong>核心原则：</strong>所有白底改为暖白（<code>#FFF1E5</code> / <code>#FFFAF6</code> / <code>#FFFDFB</code> / <code>#FFE7D6</code>），所有纯黑改为近黑 <code>#33302E</code>，全篇只使用酒红 <code>#990F3D</code> 一种强调色。</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">二、排版规范</div>
+    <p>正文 <strong>16px / 行距 1.85</strong>；小标题 17px 加粗 + 左侧 4px 酒红竖线；Markdown 内 <strong>加粗</strong> 用酒红；分割线<strong>只画一小截</strong>：宽 48px、高 3px、居中、酒红。</p>
+    <div class="d-card">
+      <div class="d-title">这是带酒红竖线的小标题</div>
+      <p>正文示例：这是一段正文，其中 <strong>重点词用酒红加粗</strong> 以突出强调。链接也使用 <a href="#" style="color:var(--accent)">酒红</a>。</p>
+      <hr class="d-div">
+      <p style="text-align:center;color:var(--muted);font-size:13px">↑ 居中的 48px×3px 酒红短分割线</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">三、组件范式</div>
+    <div class="demo">
+      <div class="d-card">
+        <div class="d-title">卡片 Card</div>
+        <p style="font-size:14px">暖白底 + 暖描边 + 极淡酒红阴影 <code>0 2px 10px rgba(153,15,61,.06)</code></p>
+      </div>
+      <div class="d-card">
+        <div class="d-title">按钮 Button</div>
+        <div class="demo" style="gap:10px">
+          <button class="btn-p">主按钮</button>
+          <button class="btn-s">次按钮</button>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-title">状态徽标</div>
+        <div class="demo" style="gap:10px">
+          <span class="badge badge-done">✓ 完成</span>
+          <span class="badge badge-err">✗ 失败</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">四、配色禁忌</div>
+    <div class="forbid">
+      <div class="bad"><span class="tag x">✗ 禁止</span> 出现第二种鲜艳强调色（绿/蓝/橙）</div>
+      <div class="ok"><span class="tag v">✓ 正确</span> 全篇只用酒红 #990F3D</div>
+      <div class="bad"><span class="tag x">✗ 禁止</span> 用 #ffffff、冷灰 #f6f7f9 作底色</div>
+      <div class="ok"><span class="tag v">✓ 正确</span> 底色用三文鱼粉/暖白系</div>
+      <div class="bad"><span class="tag x">✗ 禁止</span> 用 #000000、冷黑 #24292f 作正文</div>
+      <div class="ok"><span class="tag v">✓ 正确</span> 正文用 #33302E</div>
+      <div class="bad"><span class="tag x">✗ 禁止</span> 通栏长分割线</div>
+      <div class="ok"><span class="tag v">✓ 正确</span> 重点分隔用 48px 短横</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">五、复用口诀</div>
+    <blockquote>只保留酒红一种强调色；所有白底改暖白；纯黑改 #33302E；长分割线改 48px 短横；小标题统一加酒红竖线。</blockquote>
+  </div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var THEME_KEY = 'webdesign-theme';
+  function applyTheme(t) {
+    if (t === 'system') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', t);
+    document.querySelectorAll('#themeSwitch button').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.themeVal === t);
+    });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+  applyTheme(saved === 'light' || saved === 'dark' ? saved : 'system');
+  document.getElementById('themeSwitch').addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-theme-val]');
+    if (!btn) return;
+    var t = btn.dataset.themeVal;
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+    applyTheme(t);
+  });
+})();
+</script>
+</body>
+</html>
