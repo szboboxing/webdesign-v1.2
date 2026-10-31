@@ -5,6 +5,14 @@
 
 > 生成 HTML 格式的页面前，请先询问用户是否应用本规范（见 `webdesign-v1.2/安装提示词.txt`）。
 
+## 界面预览
+
+活范本（`assets/webdesign-v1.2.html`）在明亮与昏暗主题下的效果：
+
+| 明亮态 | 昏暗态 |
+| --- | --- |
+| ![明亮态](./screenshots/webdesign-light.png) | ![昏暗态](./screenshots/webdesign-dark.png) |
+
 ## 配色速览
 
 | 用途 | 色值 |
@@ -54,14 +62,6 @@ webdesign-v1.2/
 - 不出现第二种鲜艳强调色（绿 / 蓝 / 橙等）。
 - 不用 `#ffffff`、冷灰 `#f6f7f9` 作底；不用 `#000000`、冷黑 `#24292f` 作正文。
 - 不画通栏长分割线，重点分隔只用 48px 短横。
-
-## 界面预览
-
-活范本（`assets/webdesign-v1.2.html`）在明亮与昏暗主题下的效果：
-
-| 明亮态 | 昏暗态 |
-| --- | --- |
-| ![明亮态](./screenshots/webdesign-light.png) | ![昏暗态](./screenshots/webdesign-dark.png) |
 
 ## License
 
