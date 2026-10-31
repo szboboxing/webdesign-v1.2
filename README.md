@@ -55,6 +55,14 @@ webdesign-v1.2/
 - 不用 `#ffffff`、冷灰 `#f6f7f9` 作底；不用 `#000000`、冷黑 `#24292f` 作正文。
 - 不画通栏长分割线，重点分隔只用 48px 短横。
 
+## 界面预览
+
+活范本（`assets/webdesign-v1.2.html`）在明亮与昏暗主题下的效果：
+
+| 明亮态 | 昏暗态 |
+| --- | --- |
+| ![明亮态](./screenshots/webdesign-light.png) | ![昏暗态](./screenshots/webdesign-dark.png) |
+
 ## License
 
 [MIT](./LICENSE) © 2026 boboxing
